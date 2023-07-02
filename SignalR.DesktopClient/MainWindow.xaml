@@ -1,0 +1,30 @@
+﻿<Window x:Class="DesktopClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:local="clr-namespace:DesktopClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+            <RadioButton Content="Chat Room" Click="CheckBox_Checked_ChatRoom" />
+            <RadioButton Content="Voting Channel" Click="CheckBox_Checked_VotingChannel"/>
+
+            <!--<CheckBox Checked="CheckBox_Checked_ChatRoom" Unchecked="CheckBox_Unchecked_ChatRoom">Chat Room</CheckBox>-->
+            <!--<CheckBox Checked="CheckBox_Checked_VotingChannel" Unchecked="CheckBox_Unchecked_VotingChannel">Voting Channel</CheckBox>-->
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1">
+            <local:ChatRoom x:Name="chatRoom" Visibility="Collapsed"/>
+
+            <local:VotingChannel  x:Name="votingChannel"  Visibility="Collapsed"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>
